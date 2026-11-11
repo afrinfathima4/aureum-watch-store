@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Checkout – Aureum Horologie</title>
+  <meta name="theme-color" content="#171514">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="inner">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header id="site-header"></header>
+
+  <main id="main">
+    <div id="checkout-root">
+      <div id="checkout-content">
+        <section class="page-hero">
+          <div class="container">
+            <p class="breadcrumb"><a href="index.html">Home</a> / <a href="cart.html">Cart</a> / Checkout</p>
+            <h1>Checkout</h1>
+          </div>
+        </section>
+
+        <div class="container">
+          <div class="cart-layout">
+            <form class="checkout-form" id="checkout-form" novalidate>
+              <fieldset>
+                <legend>Customer information</legend>
+                <div class="row2">
+                  <div class="field"><label for="co-first">First name</label><input id="co-first" type="text" autocomplete="given-name"><span class="err" role="alert"></span></div>
+                  <div class="field"><label for="co-last">Last name</label><input id="co-last" type="text" autocomplete="family-name"><span class="err" role="alert"></span></div>
+                </div>
+                <div class="row2">
+                  <div class="field"><label for="co-email">Email</label><input id="co-email" type="email" autocomplete="email"><span class="err" role="alert"></span></div>
+                  <div class="field"><label for="co-phone">Phone</label><input id="co-phone" type="tel" autocomplete="tel"><span class="err" role="alert"></span></div>
+                </div>
+              </fieldset>
+
+              <fieldset>
+                <legend>Shipping address</legend>
+                <div class="field"><label for="co-address">Address</label><input id="co-address" type="text" autocomplete="street-address"><span class="err" role="alert"></span></div>
+                <div class="row2">
+                  <div class="field"><label for="co-city">City</label><input id="co-city" type="text" autocomplete="address-level2"><span class="err" role="alert"></span></div>
+                  <div class="field"><label for="co-state">State / region</label><input id="co-state" type="text" autocomplete="address-level1"><span class="err" role="alert"></span></div>
+                </div>
+                <div class="row2">
+                  <div class="field"><label for="co-zip">Postal code</label><input id="co-zip" type="text" autocomplete="postal-code"><span class="err" role="alert"></span></div>
+                  <div class="field">
+                    <label for="co-country">Country</label>
+                    <select id="co-country" autocomplete="country-name">
+                      <option>India</option><option>United States</option><option>United Kingdom</option><option>United Arab Emirates</option><option>Switzerland</option><option>Singapore</option><option>Australia</option>
+                    </select>
+                    <span class="err" role="alert"></span>
+                  </div>
+                </div>
+              </fieldset>
+
+              <fieldset>
+                <legend>Payment method</legend>
+                <p style="color:var(--creme-soft);font-size:.86rem;margin-top:-8px">Demonstration only. No payment is taken and nothing is sent anywhere.</p>
+                <div class="pay-options">
+                  <label class="pay-option"><input type="radio" name="payment" value="card" checked><span>Credit / debit card<small>Visa, Mastercard, Amex</small></span></label>
+                  <label class="pay-option"><input type="radio" name="payment" value="upi"><span>UPI / bank transfer<small>Pay on confirmation</small></span></label>
+                  <label class="pay-option"><input type="radio" name="payment" value="cod"><span>Pay on delivery<small>Insured courier, signature required</small></span></label>
+                </div>
+                <div class="pay-fields" id="card-fields">
+                  <div class="field"><label for="card-name">Name on card</label><input id="card-name" type="text" autocomplete="cc-name"><span class="err" role="alert"></span></div>
+                  <div class="field"><label for="card-number">Card number</label><input id="card-number" type="text" inputmode="numeric" autocomplete="cc-number" placeholder="0000 0000 0000 0000"><span class="err" role="alert"></span></div>
+                  <div class="row2">
+                    <div class="field"><label for="card-expiry">Expiry</label><input id="card-expiry" type="text" inputmode="numeric" autocomplete="cc-exp" placeholder="MM/YY"><span class="err" role="alert"></span></div>
+                    <div class="field"><label for="card-cvv">CVV</label><input id="card-cvv" type="text" inputmode="numeric" autocomplete="cc-csc" maxlength="4" placeholder="123"><span class="err" role="alert"></span></div>
+                  </div>
+                </div>
+              </fieldset>
+
+              <button class="btn btn--solid btn--block" type="submit">Place Order</button>
+              <p class="form-msg" id="checkout-msg" role="alert"></p>
+            </form>
+
+            <aside class="summary" aria-label="Order summary">
+              <h2>Order Summary</h2>
+              <div id="mini-items"></div>
+              <dl style="margin-top:14px">
+                <div><dt>Subtotal</dt><dd id="co-sub"></dd></div>
+                <div><dt>Shipping</dt><dd id="co-ship"></dd></div>
+                <div class="total"><dt>Total</dt><dd id="co-total"></dd></div>
+              </dl>
+              <a class="link-arrow" href="cart.html" style="display:inline-block;margin-top:22px">Edit cart</a>
+            </aside>
+          </div>
+        </div>
+      </div>
+
+      <div id="confirm-content" hidden>
+        <div class="container">
+          <div class="confirm" role="status">
+            <div class="confirm__mark"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></div>
+            <span class="eyebrow" id="confirm-id"></span>
+            <h1>Thank you, <span id="confirm-name"></span></h1>
+            <p>Your order of <strong id="confirm-total"></strong> has been received. A confirmation will be sent to <strong id="confirm-email"></strong>. (Demo: no email is actually sent.)</p>
+            <p style="margin-bottom:34px">Your watch will be inspected, regulated and sent by insured courier.</p>
+            <a class="btn" href="index.html">Continue shopping</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer id="site-footer"></footer>
+
+  <script src="js/products.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/smudge.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Account – Aureum Horologie</title>
+  <meta name="theme-color" content="#171514">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="inner">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header id="site-header"></header>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="container">
+        <p class="breadcrumb"><a href="index.html">Home</a> / Account</p>
+        <h1>Your Account</h1>
+        <p>Sign in to track orders and save your favourites, or create an account in a minute.</p>
+      </div>
+    </section>
+
+    <div class="container">
+      <div class="auth-grid">
+        <section class="form-card" aria-labelledby="login-title">
+          <h2 id="login-title">Sign in</h2>
+          <p>Welcome back.</p>
+          <form id="login-form" novalidate>
+            <div class="field">
+              <label for="login-email">Email</label>
+              <input id="login-email" type="email" autocomplete="email" placeholder="you@example.com">
+              <span class="err" role="alert"></span>
+            </div>
+            <div class="field field--pw">
+              <label for="login-password">Password</label>
+              <input id="login-password" type="password" autocomplete="current-password" placeholder="••••••••">
+              <button class="pw-toggle" type="button" data-toggle-pw="login-password" aria-label="Show password" aria-pressed="false"></button>
+              <span class="err" role="alert"></span>
+            </div>
+            <button class="btn btn--solid btn--block" type="submit">Sign in</button>
+            <p class="form-msg" id="login-msg" role="status"></p>
+          </form>
+        </section>
+
+        <section class="form-card" aria-labelledby="register-title">
+          <h2 id="register-title">Create account</h2>
+          <p>Join the House of Aureum.</p>
+          <form id="register-form" novalidate>
+            <div class="field">
+              <label for="reg-name">Full name</label>
+              <input id="reg-name" type="text" autocomplete="name" placeholder="Your name">
+              <span class="err" role="alert"></span>
+            </div>
+            <div class="field">
+              <label for="reg-email">Email</label>
+              <input id="reg-email" type="email" autocomplete="email" placeholder="you@example.com">
+              <span class="err" role="alert"></span>
+            </div>
+            <div class="field field--pw">
+              <label for="reg-password">Password</label>
+              <input id="reg-password" type="password" autocomplete="new-password" placeholder="8+ characters, with a number">
+              <button class="pw-toggle" type="button" data-toggle-pw="reg-password" aria-label="Show password" aria-pressed="false"></button>
+              <span class="err" role="alert"></span>
+            </div>
+            <div class="field field--pw">
+              <label for="reg-confirm">Confirm password</label>
+              <input id="reg-confirm" type="password" autocomplete="new-password" placeholder="Repeat password">
+              <button class="pw-toggle" type="button" data-toggle-pw="reg-confirm" aria-label="Show password" aria-pressed="false"></button>
+              <span class="err" role="alert"></span>
+            </div>
+            <label class="check"><input id="reg-terms" type="checkbox"> I agree to the terms and privacy policy</label>
+            <button class="btn btn--solid btn--block" type="submit">Create account</button>
+            <p class="form-msg" id="register-msg" role="status"></p>
+          </form>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer id="site-footer"></footer>
+
+  <script src="js/products.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/smudge.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
